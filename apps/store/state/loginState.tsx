@@ -5,7 +5,7 @@ interface LoginState {
   login: () => void;
   logout: () => void;
 }
-export const useStore: UseBoundStore<StoreApi<LoginState>> = create((set) => ({
+export const useStore = create<LoginState>((set) => ({
   isAuth: false,
   login: () => set(() => ({ isAuth: true })),
   logout: () => set({ isAuth: false }),
